@@ -76,7 +76,8 @@ your division indicating those contracts requiring your attention due to:\n\
         payload = MIMEBase('application', 'octet-stream')
         payload.set_payload((attachment).read()) # change to encoded form
         encoders.encode_base64(payload) # encode into base64
-        payload.add_header('Content-Disposition', 'attachment; filename={}'.format(filename))
+        payload.add_header(
+            'Content-Disposition', 'attachment; filename={}'.format(filename).split('/')[1])
 
         msg.attach(payload) # attach payload MIMEBase instance to message
 
