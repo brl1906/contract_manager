@@ -1,0 +1,8 @@
+.ipynb_checkpoints
+.DS_Store
+*.pyc
+*.log
+*.ini
+*.ipynb
+*old_version.py
+projectvenv
