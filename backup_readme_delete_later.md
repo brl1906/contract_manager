@@ -69,6 +69,9 @@ Here are 7  simple steps you can do while listening to Miles Davis's [Seven Step
 ## To-do
 
 * - [x] separate function run, charts and notification by agency division
+* - [ ] add error handler for bad email addresses
+* - [ ] convert print to logs
+* - [ ] change default test email recipient to target AP personnel 
 * - [ ] chart conversion Matplotlib --> Plotly
 * - [ ] expose email recipient targets as dynamic CLI run arguments
 
