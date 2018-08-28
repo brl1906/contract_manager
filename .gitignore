@@ -5,4 +5,5 @@
 *.ini
 *.ipynb
 *old_version.py
-projectvenv
+programvenv
+for_ana.txt
