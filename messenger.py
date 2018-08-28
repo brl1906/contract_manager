@@ -12,13 +12,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 
-import contract_parser # custom module
-
-#TODO:
-# 1. Pull recipient emails from config file
-# 2. Add error handler for bad email addresses to pass and log/print
-# 3. Change default test recipient to relevant AP staff personnel
-# 4. Change print statements to logs
+import contract_parser # custom module for parsing for target crieteria
+import wiper # module for cleaning sucessfully emailed files from temp folder
 
 def send_emails():
     """
@@ -26,8 +21,12 @@ def send_emails():
     for each of the divisions using contracts and attaches a separate excel
     workbook file with contract management watchlist spreadhseets for: high
     burning contracts, contracts expiring in 3 months and, contracts expiring in
-    6 months for each division. It returns a list of all files sucessfully
-    attached and emailed.
+    6 months for each division.
+
+    It performs 3 main tasks:
+        1. emails the target reports from their location in temporary folder
+        2. returns a list of all files sucessfully attached and emailed
+        3. deletes sucessfully sent files from temporary folder
 
     The email recipient is set as a default value in the make_email() function.
     It can be changed by passing a valid email address to the recipient
@@ -102,40 +101,14 @@ your division indicating those contracts requiring your attention due to:\n\
         print('Error type: {}\nError Message: {}\nError Location: line {}'.format(
             str(e_type).split("'")[1], e_obj, e_traceback.tb_lineno))
 
+    # wipe files from sucessfully sent messages & track files failing to send
+    clean_folder = wiper.clean_temporary_folder(outbound_files=sent_files)
+    clean_folder
+
+    # test
+    if len(sent_files) == clean_folder:
+        print('okay:: number of deleleted files is equal to files sent.')
+    else:
+        print('problem:: {} files sent but {} cleaned'.format(len(sent_files),clean_folder))
+
     return sent_files
-
-
-def clean_temporary_folder():
-    """
-    Function removes files from the temporary folder if they have been
-    sent via email. Primary purposes of this function are to:
-        1. manage memory utilization of program generated files
-        2. provide a capture for files that were not sent due to problematic
-        email addresses so it is easy to identify the intended recipient,
-        date and file
-
-    The program checks for and deletes sucessfully sent excel workbooks from
-    'temporary_workbooks_folder'
-    """
-    before = len(os.listdir('temporary_workbooks_folder/'))
-    for item in os.listdir('temporary_workbooks_folder/'):
-        # keep non-file objects like .files
-        if os.path.isfile('temporary_workbooks_folder/{}'.format(item)) == False:
-            pass
-        else:
-            if 'temporary_workbooks_folder/{}'.format(item) in files_delivered:
-                os.remove('temporary_workbooks_folder/{}'.format(item))
-
-    after = len(os.listdir('temporary_workbooks_folder/'))
-    print('{} files deleted'.format(before - after))
-
-files_delivered = send_emails()
-
-if __name__ == '__main__':
-
-    try:
-        files_delivered
-    except:
-        pass
-
-    clean_temporary_folder()
