@@ -1,0 +1,2 @@
+[Ana]
+password = 123456
