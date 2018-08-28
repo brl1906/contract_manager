@@ -18,7 +18,7 @@ def create_contractmgmt_dataframe(filepath, sheet='master', idx_col='MB START',
     cols variable to include or exclude desired columns if they exist in
     the workbook.
     """
-    df = pd.read_excel(filepath,sheet_name=sheet,index_col=idx_col,usecols=cols)
+    df = pd.read_excel(filepath,sheetname=sheet,index_col=idx_col,usecols=cols)
     return df
 
 def fiscal_year(df):
