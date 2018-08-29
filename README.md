@@ -21,7 +21,7 @@ Due to the nature of this responsibility, it is not currently performed with an 
 ## Getting Started
 clone it & use it.
 ```
-go get [the repo](https://github.com/brl1906/contract_manager)   clone it & use it
+go get the repo, clone it & use it
 ```
 
 ### Installing
