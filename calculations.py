@@ -10,12 +10,6 @@ from datetime import datetime as dt
 # custom module for preparing and returning relevant DGS dataframes
 import fetcher
 
-# Get and prepare the necessary data
-df = fetcher.format_column_names(
-        fetcher.create_contractmgmt_dataframe('data/Contract List.xlsx'))
-df = fetcher.fiscal_year(df)
-df = df[df['mb_end'] > dt.now()]
-
 # Perform the calculations required for contract management tracking
 def run_duration_formulas(df):
     """
@@ -70,5 +64,10 @@ def get_management_dataframe():
     """
     return run_spending_formulas(run_duration_formulas(df))
 
-
+# Get and prepare the necessary data
+df = fetcher.create_contractmgmt_dataframe('data/Contract List.xlsx')
+df = fetcher.fiscal_year(df)
+df = fetcher.format_column_names(df)
+# filter dataframe for active contracts
+df = df[df['mb_end'] > dt.now()]
 contracts = get_management_dataframe()
