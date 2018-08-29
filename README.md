@@ -19,7 +19,6 @@ Due to the nature of this responsibility, it is not currently performed with an 
 ###### *fineprint*: while this obviously doesn't rise to the level of problem statement and is not a requirement--hence the H6--our office has a Python ecosystem and would be able to more easily incorporate, communicate and deploy any solution that uses Python __if__ the solution involes a scripting language.
 
 ## Getting Started
-clone it & use it.
 ```
 go get the repo, clone it & use it
 ```
