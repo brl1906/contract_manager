@@ -23,7 +23,7 @@ clone it & use it.
 
 ### Installing
 The requirements.txt file contains all of the dependencies necessary to run this program from your machine. Creating a virtual environment and running, in your terminal, the command:
-==pip install -r requirements==
+'''pip install -r requirements'''
 
 This assumes that you have created a project folder, changed into that directory, have created a virtual environment there, activated the virtual environment for your project, and are running the above command in that location.
 * for example:
