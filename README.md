@@ -20,6 +20,9 @@ Due to the nature of this responsibility, it is not currently performed with an 
 
 ## Getting Started
 clone it & use it.
+```
+go get github.com/zyedidia/highlight
+```
 
 ### Installing
 The requirements.txt file contains all of the dependencies necessary to run this program from your machine. Creating a virtual environment and running, in your terminal, the command:
