@@ -6,3 +6,4 @@
 *.ipynb
 *old_version.py
 projectvenv
+data/Contract List.xlsx
