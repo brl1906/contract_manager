@@ -16,7 +16,6 @@ Agency accounts payable staff play a significant administrative support role in 
 
 Due to the nature of this responsibility, it is not currently performed with an optimal standard frequency--how is that for bureaucracy-speak.  
 
-###### *fineprint*: while this obviously doesn't rise to the level of problem statement and is not a requirement--hence the H6--our office has a Python ecosystem and would be able to more easily incorporate, communicate and deploy any solution that uses Python __if__ the solution involes a scripting language.
 
 ## Getting Started
 ```
@@ -37,6 +36,7 @@ This assumes that you have created a project folder, changed into that directory
 ## TODO:
 * - [x] create initial project readme with problem statement
 * - [x] separate function run, charts and notification by agency division
+* - [ ] add sample data for format example
 * - [ ] chart conversion Matplotlib --> Plotly
 * - [ ] expose email recipient targets as dynamic CLI run arguments
 
@@ -44,4 +44,5 @@ This assumes that you have created a project folder, changed into that directory
 [Business Process Improvement Office](https://generalservices.baltimorecity.gov/business-process-improvement-office)
 
 ## Acknowledgements
-Nothing happens in a vacum--except carpet cleaning, and even that is debatable. A special thank you goes to the folks that were banging their heads on this problem and lifted them long enough to ask the magic question, is there a way to automate the boring stuff.  Special project specific shoutouts will follow below. A nod goes to the DGS Director, Steve Sharkey for forcing us to 'do better', to former City Budget Director, Andrew Kleine for asking us to 'do more with less' and to Berke Attila, DGS CFO for incepting ideas about how to 'do more stuff and how to prioritize it'.
+Nothing happens in a vacum--except carpet cleaning, and even that is debatable. A special thank you goes to the folks that were banging their heads on this problem and lifted them long enough to ask the magic question, is there a way to automate the boring stuff.  
+Special shoutouts to Troy King and Berke Attila for spending the hours to walk through this problem untill it was clear and then telling us to do something about it.
