@@ -35,6 +35,7 @@ This assumes that you have created a project folder, changed into that directory
 
 ## TODO:
 * - [x] create initial project readme with problem statement
+* - [ ] add change order memo creation feature
 * - [x] separate function run, charts and notification by agency division
 * - [ ] add sample data for format example
 * - [ ] chart conversion Matplotlib --> Plotly
@@ -45,4 +46,5 @@ This assumes that you have created a project folder, changed into that directory
 
 ## Acknowledgements
 Nothing happens in a vacum--except carpet cleaning, and even that is debatable. A special thank you goes to the folks that were banging their heads on this problem and lifted them long enough to ask the magic question, is there a way to automate the boring stuff.  
+
 Special shoutouts to Troy King and Berke Attila for spending the hours to walk through this problem untill it was clear and then telling us to do something about it.
