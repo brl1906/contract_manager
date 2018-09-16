@@ -7,3 +7,8 @@
 *old_version.py
 projectvenv
 data/Contract List.xlsx
+example_memos/
+word_doc_demo.docx
+ploter.py
+temporary_workbooks_folder
+changeorder_memos
