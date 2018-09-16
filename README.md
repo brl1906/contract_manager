@@ -35,7 +35,7 @@ This assumes that you have created a project folder, changed into that directory
 
 ## TODO:
 * - [x] create initial project readme with problem statement
-* - [ ] add change order memo creation feature
+* - [x] add change order memo creation feature
 * - [x] separate function run, charts and notification by agency division
 * - [X] add sample data for format example
 * - [ ] chart conversion Matplotlib --> Plotly
