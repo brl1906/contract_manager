@@ -200,7 +200,7 @@ cc: {} \n{}\n{}""".format(
     if not os.path.exists(filepath):
         os.makedirs(filepath)
     pdf.output(os.path.join(filepath,'{}-changeorder-{}.pdf'.format(po_number,dt.today().strftime('%m-%d-%y'))))
-    print('done!')
+
 
 
 def generate_pdfs(rcpnt='marcia diggs',percent_of_limit=10):
