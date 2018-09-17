@@ -1,5 +1,8 @@
 """
-Module for .
+Module for sending email with attachments for spreadsheets
+of contracts requiring attention for each division. Module
+also includes a method for cleaning a temporary folder
+for the reports.
 """
 import configparser
 import os
@@ -42,8 +45,10 @@ def send_emails():
     list of files generated for each division as return value of the function.
     """
     sent_files = []
+    config = configparser.ConfigParser()
+    config.read('configuration/config.ini')
 
-    def make_email(file, division, recipient='pymessaging@gmail.com'):
+    def make_email(file, division, recipient=config['Email']['email_address']):
         """
         Function takes 2 parameters, the name of the file to be sent as an attachment
         and the name of the division using the contracts in the file.
@@ -52,8 +57,6 @@ def send_emails():
         a high burn rate and or approaching expiration and attaches the relevant
         excel file.  The email is built using Gmail
         """
-        config = configparser.ConfigParser()
-        config.read('configuration/config.ini')
         sender = config['Email']['email_address']
         password = config['Email']['password']
 
