@@ -1,12 +1,12 @@
 # contract_manager
 Project for automation of local government contract management, analysis, notification tasks.
 
-This program gets, parses and evaluates contract management data to provide both email notification and KPI charts for an Invoice/ Accounts Payable employee, providing insight on: 1) performance against spending limits, 2) contract burn rate status, 3) renewal and expiration option status.
+This program gets, parses and evaluates contract management data to provide email notification, KPI charts, automatically generates change order memos for contracts meeting key criteria, handling key manual administrative tasks for  Invoice/ Accounts Payable employees.  It provides insight on: 1) performance against spending limits, 2) contract burn rate status, 3) renewal and expiration option status, 4) contracts in danger of service gaps.
 
-It helps ensure that there are no gaps in service or contract lapses due to either contract expiration or exceeding approved public spending limits which is critical for agencies that rely on a combination of vendors to provide services to local residents and other support agencies. It automates parts of the work flow for government workers and significantly reduces the level of effort associated with contract management where agency ownership of contracts is unclear or not 1 to 1.
+It helps ensure that there are no gaps in service or contract lapses due to either contract expiration or exceeding approved public spending limits which is critical for agencies that rely on a combination of vendors to provide services to local residents and other support agencies. It automates parts of the work flow for government workers and reduces the level of effort associated with contract management where agency ownership of contracts is unclear or not 1 to 1.
 
 ## Problem Statement
-Agency accounts payable staff play a significant administrative support role in protecting against service gaps and ensuring that operational divisions can provide necessary services without interruption and adequately balance resources. Effective contract management is important for various reasons including but not limited to:
+Agency accounts payable staff play a significant administrative support role in ensuring that operational divisions can provide necessary services to agencies and residents without interruption and adequately balance resources. Effective contract management is important for various reasons including but not limited to:
 * ensuring continuity of service for divisions dependent upon outside contractors to support  critical services
 * increasing the pool of vendors willing and attracted to compete on municipal contracts by removing barriers to payment
 * supporting efforts to engage small & local contractors who traditionally cannot afford long periods of delayed payment
@@ -15,7 +15,6 @@ Agency accounts payable staff play a significant administrative support role in 
 **Fact**: Current performance of this task is uncessarily manual and cumbersome for the 21st century.
 
 Due to the nature of this responsibility, it is not currently performed with an optimal standard frequency--how is that for bureaucracy-speak.  
-
 
 ## Getting Started
 ```
