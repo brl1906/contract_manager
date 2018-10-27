@@ -40,6 +40,8 @@ This assumes that you have created a project folder, changed into that directory
 * - [X] add sample data for format example
 * - [X] fix file attachment name in messenger module
 * - [ ] add pdfs to email & attachment count to message information
+* - [ ] update clean temp folder to also wipe sent memo pdfs
+* - [ ] slides
 * - [ ] chart conversion Matplotlib --> Plotly
 * - [ ] expose email recipient targets as dynamic CLI run arguments
 
