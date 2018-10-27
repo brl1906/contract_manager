@@ -39,7 +39,7 @@ This assumes that you have created a project folder, changed into that directory
 * - [x] separate function run, charts and notification by agency division
 * - [X] add sample data for format example
 * - [X] fix file attachment name in messenger module
-* - [ ] add pdfs to email & attachment count to message information
+* - [X] add pdfs to email & attachment count to message information
 * - [ ] update clean temp folder to also wipe sent memo pdfs
 * - [ ] slides
 * - [ ] chart conversion Matplotlib --> Plotly
