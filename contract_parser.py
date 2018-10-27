@@ -88,7 +88,6 @@ def generate_watchlist_workbooks():
 
     return filenames
 
-
 class PDF(FPDF):
     """
     Create pdf memo document with City seal header and page number footer.
@@ -197,10 +196,12 @@ cc: {} \n{}\n{}""".format(
     pdf.cell(10,5,'AP Supervisor')
     # save to file
     filepath = 'changeorder_memos'
+    name = os.path.join(filepath,'{}-changeorder-{}.pdf'.format(po_number,dt.today().strftime('%m-%d-%y')))
     if not os.path.exists(filepath):
         os.makedirs(filepath)
-    pdf.output(os.path.join(filepath,'{}-changeorder-{}.pdf'.format(po_number,dt.today().strftime('%m-%d-%y'))))
+    pdf.output(name)
 
+    return name
 
 
 def generate_pdfs(rcpnt='marcia diggs',percent_of_limit=10):
@@ -213,9 +214,10 @@ def generate_pdfs(rcpnt='marcia diggs',percent_of_limit=10):
                                          a percentage of the blanket limit)
 
     """
-    high_df = contracts[contracts['burn_status']=='high']
+    filenames = []
+    high_df = contracts[contracts['burn_status'] == 'high']
     for index,row in high_df.iterrows():
-        memo(recipient=rcpnt,
+        filenames.append(memo(recipient=rcpnt,
                 months_remaining=row['months_left'],
                 pct_spent=row['pct_spent'],
                 description=row['description'],
@@ -223,8 +225,11 @@ def generate_pdfs(rcpnt='marcia diggs',percent_of_limit=10):
                 limit=row['mb_$_limit'],
                 po_number=row['po'],
                 expiration=row['mb_end'],
-                division=row['division'])
+                division=row['division']))
+
     print('generate_pdfs function run complete.')
+    return filenames
+
 
 
 if __name__ == '__main__':
