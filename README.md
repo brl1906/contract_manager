@@ -32,16 +32,6 @@ This assumes that you have created a project folder, changed into that directory
   * $ source yourvenvname/bin/activate
   * $ pip install -r requirements
 
-## Contributing
-Want to contribute to this project's development???        Besos!!:kissing_closed_eyes:
-
-* Fork the repo
-  * Create a new branch (```git checkout -b improve-feature```)
-    * Make desired changes to files  
-    * Add changes to reflect changes you made
-      * Commit your changes (```git commit -m 'Improve feature'```)
-  * Push to the branch (```git push origin improve-feature```)
-* Create your pull request
 
 ## TODO:
 * - [x] create initial project readme with problem statement
