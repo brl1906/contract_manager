@@ -38,7 +38,7 @@ This assumes that you have created a project folder, changed into that directory
 * - [x] add change order memo creation feature
 * - [x] separate function run, charts and notification by agency division
 * - [X] add sample data for format example
-* - [ ] fix file attachment name in messenger module
+* - [X] fix file attachment name in messenger module
 * - [ ] add pdfs to email & attachment count to message information
 * - [ ] chart conversion Matplotlib --> Plotly
 * - [ ] expose email recipient targets as dynamic CLI run arguments
