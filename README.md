@@ -44,7 +44,7 @@ This assumes that you have created a project folder, changed into that directory
 * - [ ] expose email recipient targets as dynamic CLI run arguments
 
 ## Authors
-[Business Process Improvement Office](https://generalservices.baltimorecity.gov/business-process-improvement-office)
+Babila Lima [Business Process Improvement Office](https://generalservices.baltimorecity.gov/business-process-improvement-office)
 
 ## Acknowledgements
 Nothing happens in a vacum--except carpet cleaning, and even that is debatable. A special thank you goes to the folks that were banging their heads on this problem and lifted them long enough to ask the magic question, is there a way to automate the boring stuff.  
