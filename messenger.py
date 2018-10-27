@@ -15,7 +15,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 
-import contract_parser # custom module for parsing for target crieteria
+import contract_parser # custom module for parsing target crieteria
 import wiper # module for cleaning sucessfully emailed files from temp folder
 
 def send_emails():
@@ -72,16 +72,13 @@ your division indicating those contracts requiring your attention due to:\n\
 \t1) a high burn rate, and or\n\t2) approaching contract expiration.')
         msg.attach(body)
 
-        filename = file
-        attachment = open(filename, 'rb')
-        # message payload variable is instance of MIMEBase for email
-        payload = MIMEBase('application', 'octet-stream')
-        payload.set_payload((attachment).read()) # change to encoded form
-        encoders.encode_base64(payload) # encode into base64
-        payload.add_header(
-            'Content-Disposition', 'attachment; filename={}'.format(filename).split('/')[1])
-
-        msg.attach(payload) # attach payload MIMEBase instance to message
+        with open(file, 'rb') as f:
+            payload = MIMEBase('application', 'octet-stream')
+            payload.set_payload(f.read())
+            encoders.encode_base64(payload) # encode into base64
+            payload.add_header('Content-Disposition',
+                              'attachment; filename={}'.format(file.split('/')[1]))
+            msg.attach(payload) # attach payload MIMEBase instance to the message
 
         smtpObj = smtplib.SMTP('smtp.gmail.com',587)
         smtpObj.ehlo()
@@ -90,7 +87,7 @@ your division indicating those contracts requiring your attention due to:\n\
         smtpObj.sendmail(msg['From'],msg['To'],msg.as_string())
         smtpObj.quit()
         print('{} message sent'.format(division))
-        sent_files.append(filename) # add sucessfully sent files to list
+        sent_files.append(file) # add sucessfully sent files to list
 
     try:
         for workbook in contract_parser.generate_watchlist_workbooks():
@@ -108,7 +105,7 @@ your division indicating those contracts requiring your attention due to:\n\
     clean_folder = wiper.clean_temporary_folder(outbound_files=sent_files)
     clean_folder
 
-    # test
+    # simple testing logic on performance of wiping folder clean
     if len(sent_files) == clean_folder:
         print('okay:: number of deleleted files is equal to files sent.')
     else:
